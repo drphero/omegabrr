@@ -1,13 +1,15 @@
 name: build
 
-on:
+on: 
+  release:
+    types: [published]
   push:
-    branches:
-      - "main"
-      - "develop"
     tags:
-      - 'v*'
-  pull_request:
+    - 'v*'
+  #  branches: 
+  #    - master
+  watch:
+    types: [started]
 
 permissions:
   contents: write
